@@ -198,11 +198,15 @@
   }
 
   @media (max-width: $tablet) and (orientation: portrait) {
+    opacity: 1;
+    transform: translateY(0);
     color: $c-light;
     background-color: $c-dark;
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
+    opacity: 1;
+    transform: translateY(0);
     color: $c-light;
     background-color: $c-dark;
   }
