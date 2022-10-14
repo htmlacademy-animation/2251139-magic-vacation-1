@@ -54,23 +54,6 @@
       width: 112.5%;
       height: 112.5%;
     }
-
-    &+.social-block__list {
-      opacity: 1;
-      pointer-events: auto;
-
-      .social-block__link {
-        opacity: 1;
-
-        &--insta {
-          transition-delay: 0.1s;
-        }
-
-        &--vk {
-          transition-delay: 0.2s;
-        }
-      }
-    }
   }
 
   &:focus {
@@ -80,20 +63,25 @@
     &::before {
       border-color: $c-purple;
     }
+  }
 
+  &:hover,
+  &:focus,
+  .social-block--active & {
     &+.social-block__list {
       opacity: 1;
       pointer-events: auto;
 
       .social-block__link {
         opacity: 1;
+        transform: translateY(0);
 
         &--insta {
-          transition-delay: 0.1s;
+          transition-delay: 0.15s;
         }
 
         &--vk {
-          transition-delay: 0.2s;
+          transition-delay: 0.3s;
         }
       }
     }
@@ -201,6 +189,7 @@
   border: 2px solid transparent;
   border-radius: 50%;
   opacity: 0;
+  transform: translateY(5px);
   transition: all 0.3s ease-in-out;
 
   @media (min-width: $stop-scaling) {
