@@ -52,6 +52,23 @@
       width: 112.5%;
       height: 112.5%;
     }
+
+    &+.social-block__list {
+      opacity: 1;
+      pointer-events: auto;
+
+      .social-block__link {
+        opacity: 1;
+
+        &--insta {
+          transition-delay: 0.1s;
+        }
+
+        &--vk {
+          transition-delay: 0.2s;
+        }
+      }
+    }
   }
 
   &:focus {
@@ -62,9 +79,21 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
+    &+.social-block__list {
       opacity: 1;
       pointer-events: auto;
+
+      .social-block__link {
+        opacity: 1;
+
+        &--insta {
+          transition-delay: 0.1s;
+        }
+
+        &--vk {
+          transition-delay: 0.2s;
+        }
+      }
     }
   }
 
@@ -89,6 +118,7 @@
   margin-top: 1.5rem;
   opacity: 0;
   pointer-events: none;
+  transition: all 0.3s ease-in-out;
 
   @media (min-width: $stop-scaling) {
     margin-top: 15px;
@@ -168,6 +198,8 @@
   color: $c-light;
   border: 2px solid transparent;
   border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
 
   @media (min-width: $stop-scaling) {
     width: 40px;
