@@ -97,6 +97,16 @@
   font-size: 1.8rem;
   line-height: 2rem;
 
+  opacity: 0;
+  transform: translateX(5rem);
+  transition: all 0.5s ease-in-out;
+
+  .swiper-slide-active &,
+  .swiper-slide-next & {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
     max-width: 340px;
@@ -112,6 +122,11 @@
     min-height: 11.6rem;
     font-size: 1.4rem;
     line-height: 1.5rem;
+
+    .swiper-slide-next & {
+      opacity: 0 !important;
+      transform: translateX(5rem) !important;
+    }
   }
 
   @media (max-width: $mobile) and (orientation: landscape) {
@@ -122,6 +137,11 @@
     min-height: 14rem;
     font-size: 1.4rem;
     line-height: 1.5rem;
+
+    .swiper-slide-next & {
+      opacity: 0 !important;
+      transform: translateX(5rem) !important;
+    }
   }
 }
 
