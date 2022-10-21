@@ -35,6 +35,14 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 0;
+  transform: translateX(-10px);
+
+  .page-loaded & {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.2s cubic-bezier(0.22, 1.09, 0.86, 0.95) 0.3s;
+  }
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -81,6 +89,12 @@
   background-color: $c-light;
   border-radius: 50%;
   z-index: 1;
+  opacity: 0;
+
+  .page-loaded & {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.3s;
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: block;
@@ -178,6 +192,12 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  opacity: 0;
+
+  .page-loaded & {
+    opacity: 1;
+    transition: opacity 0.3s cubic-bezier(0.22, 1.09, 0.86, 0.95) 0.3s;
+  }
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -252,7 +272,7 @@
       width: 0%;
       height: 2px;
       background-color: $c-light;
-      transition: width 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         background-color: $c-dark;
@@ -265,7 +285,10 @@
 
     &.active {
       &::after {
+        right: auto;
+        left: 0;
         width: 100%;
+        transition: width 0.3s cubic-bezier(0.22, 1.09, 0.86, 0.95) 0.4s;
       }
     }
 
