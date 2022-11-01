@@ -45,7 +45,7 @@
   right: 0;
   color: $c-dark;
   background-color: $c-light;
-  z-index: 1;
+  z-index: 3;
   transform: translateY(100%);
 
   .page-loaded & {
@@ -291,6 +291,23 @@
         display: inline;
       }
     }
+  }
+}
+
+.screen__bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #5f458c;
+  z-index: 2;
+  transform-origin: center bottom;
+  transform: scaleY(0);
+
+  &_active {
+    transition: transform 0.3s ease-out;
+    transform: scaleY(1);
   }
 }
 
