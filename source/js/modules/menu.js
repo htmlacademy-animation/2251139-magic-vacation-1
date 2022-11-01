@@ -16,10 +16,25 @@ export default () => {
   }
 
   for (let i = 0; i < menuLinks.length; i++) {
-    menuLinks[i].addEventListener(`click`, function () {
+    menuLinks[i].addEventListener(`click`, function (e) {
       if (window.innerWidth < 1025) {
         header.classList.remove(`page-header--menu-opened`);
         document.body.classList.remove(`menu-opened`);
+      }
+
+      e.preventDefault();
+      const href = e.target.getAttribute('href');
+      const bg = document.querySelector('#story .screen__bg');
+
+      if (window.location.hash === '#story') {
+        bg.classList.add('screen__bg_active');
+        setTimeout(() => {
+          window.location.hash = href;
+          bg.classList.remove('screen__bg_active');
+        }, 300);
+      }
+      else {
+        window.location.hash = href;
       }
     });
   }
